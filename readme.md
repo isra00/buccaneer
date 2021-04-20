@@ -1,4 +1,4 @@
-1. Install the user script on some user script engine (TamperMonkey, etc.)
+1. Install the user script on some user script engine (TamperMonkey, etc.) by [clicking here](https://github.com/isra00/buccaneer/raw/main/Buccaneer.user.js).
 2. Install DownThemAll or other download manager.
 3. When reading online a book **you have borrowed**, click "Buccaneer this!".
 4. Wait for all images to finish loading.
