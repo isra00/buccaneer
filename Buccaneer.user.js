@@ -16,8 +16,8 @@
 
         init: function() {
             var floatingButton = document.createElement("div");
-            floatingButton.setAttribute("style", "position: absolute;top: 0;right: 0;background: rgba(255,255,255,.3);z-index: 999;padding: 2em;border-radius: 1em;");
-            floatingButton.innerHTML = '<a href="javascript:void(0)" onclick="window.Buccaneer.perform()" style="text-decoration: none;font-size: 20px;border-radius: .3em;background: #9b1111;color: white;padding: .5em 1em;box-shadow: 1px 1px 5px #444;text-shadow: 1px 1px 1px black;">Buccaneer this!</a>';
+            floatingButton.setAttribute("style", "position: absolute;top: 0;right: 0;background: rgba(255,255,255,.8);z-index: 999;padding: 1em 2em 2em;border-radius: 1em;");
+            floatingButton.innerHTML = '<p style="margin: 0 0 1em;">Zoom level (less is bigger): <input type="number" id="bucScale" value="0" size="1"></p><a href="javascript:void(0)" onclick="window.Buccaneer.perform()" style="text-decoration: none;font-size: 20px;border-radius: .3em;background: #9b1111;color: white;padding: .5em 1em;box-shadow: 1px 1px 5px #444;text-shadow: 1px 1px 1px black;">Buccaneer this!</a>';
             document.getElementsByTagName("body")[0].appendChild(floatingButton);
         },
 
@@ -29,11 +29,12 @@
         stealCode: function() {
 
             var injected = `
+    var scale = document.getElementById("bucScale").value;
     document.getElementsByTagName("body")[0].innerHTML = "";
     response.data.brOptions.data.forEach(function (jsonImgGroup) {
       jsonImgGroup.forEach(function (jsonImg) {
         var img = document.createElement("img");
-        img.setAttribute("src", jsonImg.uri + "&scale=2&rotate=0");
+        img.setAttribute("src", jsonImg.uri + "&scale=" + scale + "&rotate=0");
         document.getElementsByTagName("body")[0].appendChild(img);
       });
     });
