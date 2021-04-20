@@ -2,10 +2,11 @@
 // @name         Buccaneer
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
+// @description  Assist you to bulk download books from The Internet Archive (1 image file per page)
 // @author       You
 // @match        https://archive.org/details/*
 // @grant        none
+// @updateURL    https://github.com/isra00/buccaneer/raw/main/Buccaneer.user.js
 // ==/UserScript==
 
 (function() {
